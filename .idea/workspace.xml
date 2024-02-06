@@ -4,21 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abddf403-6e53-4259-97c8-114299284ab2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dakar/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dakar/Socorrista.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/saveTheRopa/Calzado.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/saveTheRopa/GuardaRopa.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/saveTheRopa/Main.java" afterDir="false" />
+    <list default="true" id="abddf403-6e53-4259-97c8-114299284ab2" name="Changes" comment="Initial commit">
+      <change beforePath="$PROJECT_DIR$/src/main/java/dakar/Carrera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dakar/Carrera.java" afterDir="false" />
     </list>
-    <list id="239f3ca4-717b-4d57-b21a-56f44602e5af" name="Changes by fsavala" comment="" />
     <list id="fa59a585-e436-4d66-a2c6-3b24460b6937" name="Changes by jpinillafore" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,11 +88,24 @@
       <workItem from="1707248882279" duration="765000" />
       <workItem from="1707249655675" duration="90000" />
       <workItem from="1707249777245" duration="57000" />
-      <workItem from="1707249879145" duration="2897000" />
+      <workItem from="1707249879145" duration="3329000" />
     </task>
+    <task id="LOCAL-00001" summary="Initial commit">
+      <option name="closed" value="true" />
+      <created>1707253037791</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1707253037791</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
   </component>
 </project>

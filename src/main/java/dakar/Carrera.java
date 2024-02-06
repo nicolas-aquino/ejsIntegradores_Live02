@@ -19,7 +19,7 @@ public class Carrera {
     }
 
     public void darDeAltaAuto(Double velocidad, Double aceleracion, Integer anguloDeGiro, String patente){
-        vehiculos.add(new Auto());
+        vehiculos.add(new Auto(velocidad, aceleracion,anguloDeGiro,patente));
     }
     public void darDeAltaMoto(Double velocidad, Double aceleracion, Integer anguloDeGiro, String patente){
         vehiculos.add()

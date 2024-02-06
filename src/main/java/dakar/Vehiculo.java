@@ -16,4 +16,28 @@ public abstract class Vehiculo {
         this.peso = peso;
         this.ruedas = ruedas;
     }
+
+    public Double getVelocidad() {
+        return velocidad;
+    }
+
+    public Double getAceleracion() {
+        return aceleracion;
+    }
+
+    public Integer getAnguloDeGiro() {
+        return anguloDeGiro;
+    }
+
+    public String getPatente() {
+        return patente;
+    }
+
+    public Double getPeso() {
+        return peso;
+    }
+
+    public Integer getRuedas() {
+        return ruedas;
+    }
 }
