@@ -1,7 +1,9 @@
 package dakar;
 
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.function.Function;
 
 public class Carrera {
     private Double distancia;
@@ -10,7 +12,7 @@ public class Carrera {
     private Integer cantidadDeVehiculosPermitidos;
     private List<Vehiculo> vehiculos;
 
-    public Carrera(Double distancia, Double premioEnDolares, String nombre, Integer cantidadDeVehiculosPermitidos){
+    public Carrera(Double distancia, Double premioEnDolares, String nombre, Integer cantidadDeVehiculosPermitidos) {
         this.distancia = distancia;
         this.premioEnDolares = premioEnDolares;
         this.nombre = nombre;
@@ -18,19 +20,38 @@ public class Carrera {
         this.vehiculos = new LinkedList<>();
     }
 
-    public void darDeAltaAuto(Double velocidad, Double aceleracion, Integer anguloDeGiro, String patente){
-        vehiculos.add(new Auto(velocidad, aceleracion,anguloDeGiro,patente));
+    public void darDeAltaAuto(Double velocidad, Double aceleracion, Integer anguloDeGiro, String patente) {
+        if (vehiculos.size() < cantidadDeVehiculosPermitidos) {
+            vehiculos.add(new Auto(velocidad, aceleracion, anguloDeGiro, patente));
+        } else {
+            System.out.println("Error: No se pudo agregar el auto. No hay más cupo en esta carrera.");
+        }
     }
-    public void darDeAltaMoto(Double velocidad, Double aceleracion, Integer anguloDeGiro, String patente){
-        vehiculos.add()
-    }
-    public void eliminarVehiculo(Vehiculo vehiculo){
-        
-    }
-    public void eliminarVehiculoConPatente(String patente){
 
+    public void darDeAltaMoto(Double velocidad, Double aceleracion, Integer anguloDeGiro, String patente) {
+        if (vehiculos.size() < cantidadDeVehiculosPermitidos) {
+            vehiculos.add(new Moto(velocidad, aceleracion, anguloDeGiro, patente));
+        } else {
+            System.out.println("Error: No se pudo agregar la moto. No hay más cupo en esta carrera.");
+        }
     }
-    public Vehiculo ganador(){
-        return null;
+
+    public void eliminarVehiculo(Vehiculo vehiculo) {
+        vehiculos.remove(vehiculo);
+    }
+
+    public void eliminarVehiculoConPatente(String patente) {
+        vehiculos.removeIf(v -> v.getPatente().equals(patente));
+    }
+
+    public Vehiculo ganador() {
+        //Velocidad * ½ Aceleracion / (AnguloDeGiro*(Peso-Cantidad de Ruedas * 100)
+        Function<Vehiculo, Double> calc = v -> (v.getVelocidad() * 0.5 * v.getAceleracion()) / (v.getAnguloDeGiro() * (v.getPeso() - v.getRuedas() * 100));
+
+        Vehiculo winner = vehiculos.stream()
+                .max(Comparator.comparing(calc))
+                .orElseThrow();
+
+        return winner;
     }
 }
