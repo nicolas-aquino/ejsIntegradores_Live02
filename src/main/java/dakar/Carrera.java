@@ -11,6 +11,8 @@ public class Carrera {
     private String nombre;
     private Integer cantidadDeVehiculosPermitidos;
     private List<Vehiculo> vehiculos;
+    private SocorristaAuto socorristaAuto;
+    private SocorristaMoto socorristaMoto;
 
     public Carrera(Double distancia, Double premioEnDolares, String nombre, Integer cantidadDeVehiculosPermitidos) {
         this.distancia = distancia;
@@ -18,6 +20,8 @@ public class Carrera {
         this.nombre = nombre;
         this.cantidadDeVehiculosPermitidos = cantidadDeVehiculosPermitidos;
         this.vehiculos = new LinkedList<>();
+        this.socorristaAuto = new SocorristaAuto();
+        this.socorristaMoto = new SocorristaMoto();
     }
 
     public void darDeAltaAuto(Double velocidad, Double aceleracion, Integer anguloDeGiro, String patente) {
@@ -53,5 +57,13 @@ public class Carrera {
                 .orElseThrow();
 
         return winner;
+    }
+
+    public void socorrerAuto(Auto auto) {
+        socorristaAuto.socorrer(auto);
+    }
+
+    public void socorrerMoto(Moto moto) {
+        socorristaMoto.socorrer(moto);
     }
 }
